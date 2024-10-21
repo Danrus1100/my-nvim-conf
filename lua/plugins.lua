@@ -43,11 +43,6 @@ return require('packer').startup(function()
         "neovim/nvim-lspconfig", -- Необходим для работы с LSP
     }
     use {'nvim-telescope/telescope.nvim', tag = '0.1.8',}
-    use {
-        'Exafunction/codeium.vim',
-        config = function ()
-        end
-    }
 
     -- Вызов отдельных конфигураций плагинов
     require('plugin_config.lualine')
