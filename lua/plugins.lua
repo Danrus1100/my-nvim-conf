@@ -18,6 +18,7 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-path'         -- Источник для файлов и путей
     use 'hrsh7th/cmp-cmdline'      -- Источник для командной строки
     use 'saadparwaiz1/cmp_luasnip' -- Источник для LuaSnip
+    use 'andweeb/presence.nvim'    -- Discord presence
     use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
 
     -- Сниппеты
@@ -43,6 +44,12 @@ return require('packer').startup(function()
         "neovim/nvim-lspconfig", -- Необходим для работы с LSP
     }
     use {'nvim-telescope/telescope.nvim', tag = '0.1.8',}
+    use {
+        'github/copilot.vim',
+        config = function()
+            vim.g.copilot_no_tab_map = false -- Отключаем стандартную привязку к клавише Tab
+        end
+    }
 
     -- Вызов отдельных конфигураций плагинов
     require('plugin_config.lualine')
