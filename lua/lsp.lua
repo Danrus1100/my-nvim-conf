@@ -19,3 +19,16 @@ lspconfig.lua_ls.setup {
   },
 }
 
+-- Настройка rust-analyzer
+require'lspconfig'.rust_analyzer.setup({
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = {
+        allFeatures = true,
+      },
+      checkOnSave = {
+        command = "clippy",  -- Использование Clippy для проверки кода
+      },
+    },
+  }
+})
