@@ -13,4 +13,10 @@ vim.opt.fillchars:append("eob: ") -- Отключить символ ~ для п
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.cmdheight = 0
+vim.opt.wrap = false
+
+
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+vim.cmd("hi NormalNC guibg=NONE ctermbg=NONE")
+vim.cmd("hi EndOfBuffer guibg=NONE ctermbg=NONE")
 

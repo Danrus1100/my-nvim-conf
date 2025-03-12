@@ -19,7 +19,7 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline'      -- Источник для командной строки
     use 'saadparwaiz1/cmp_luasnip' -- Источник для LuaSnip
     use 'andweeb/presence.nvim'    -- Discord presence
-    use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
+ --   use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
 
     -- Сниппеты
     use 'L3MON4D3/LuaSnip'         -- LuaSnip - движок сниппетов
@@ -57,6 +57,6 @@ return require('packer').startup(function()
     require('plugin_config.treesitter')
     require('plugin_config.neotree')
     require('plugin_config.mason')
-    require('plugin_config.pywal')  
+    --require('plugin_config.pywal')  
     require('plugin_config.presence')
 end)
