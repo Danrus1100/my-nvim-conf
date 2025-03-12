@@ -20,7 +20,7 @@ lspconfig.lua_ls.setup {
 }
 
 -- Настройка rust-analyzer
-require'lspconfig'.rust_analyzer.setup({
+lspconfig.rust_analyzer.setup({
   settings = {
     ["rust-analyzer"] = {
       cargo = {
@@ -32,3 +32,18 @@ require'lspconfig'.rust_analyzer.setup({
     },
   }
 })
+
+-- Настройка для языка Go 
+lspconfig.gopls.setup {
+  cmd = {"gopls"},
+  filetypes = {"go", "gomod"},
+  root_dir = lspconfig.util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
+}

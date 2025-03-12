@@ -1,4 +1,4 @@
--- Автоматическая установка Packer
+-- -- Автоматическая установка Packer
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -32,7 +32,7 @@ return require('packer').startup(function()
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
-        requires = { 
+        requires = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- Необязательно, для иконок
             "MunifTanjim/nui.nvim",
@@ -50,6 +50,21 @@ return require('packer').startup(function()
             vim.g.copilot_no_tab_map = false -- Отключаем стандартную привязку к клавише Tab
         end
     }
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
 
     -- Вызов отдельных конфигураций плагинов
     require('plugin_config.lualine')
